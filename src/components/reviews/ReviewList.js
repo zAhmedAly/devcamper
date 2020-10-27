@@ -52,9 +52,9 @@ const ReviewList = () => {
           </div>
           <div className="col-md-4">
             <h1 className="text-center my-4">
-              <span className="badge badge-secondary badge-success rounded-circle p-3">
+              <span className="badge badge-secondary badge-success rounded-circle p-2">
                 8.8
-              </span>
+              </span>{" "}
               Rating
             </h1>
             <Link to="/add-review" className="btn btn-primary btn-block my-3">

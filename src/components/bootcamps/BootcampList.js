@@ -40,46 +40,48 @@ const BootcampList = () => {
               </form>
             </div>
 
-            <h4>Filter</h4>
-            <form>
-              <div className="form-group">
-                <label> Rating</label>
-                <select className="custom-select mb-2">
-                  <option value="any" selected>
-                    Any
-                  </option>
-                  <option value="9">9+</option>
-                  <option value="8">8+</option>
-                  <option value="7">7+</option>
-                  <option value="6">6+</option>
-                  <option value="5">5+</option>
-                  <option value="4">4+</option>
-                  <option value="3">3+</option>
-                  <option value="2">2+</option>
-                </select>
-              </div>
+            <div className="card card-body mb-4">
+              <h4 className="mb-3">Filter</h4>
+              <form>
+                <div className="form-group">
+                  <label> Rating</label>
+                  <select className="custom-select mb-2">
+                    <option value="any" selected>
+                      Any
+                    </option>
+                    <option value="9">9+</option>
+                    <option value="8">8+</option>
+                    <option value="7">7+</option>
+                    <option value="6">6+</option>
+                    <option value="5">5+</option>
+                    <option value="4">4+</option>
+                    <option value="3">3+</option>
+                    <option value="2">2+</option>
+                  </select>
+                </div>
 
-              <div className="form-group">
-                <label> Budget</label>
-                <select className="custom-select mb-2">
-                  <option value="any" selected>
-                    Any
-                  </option>
-                  <option value="20000">$20,000</option>
-                  <option value="15000">$15,000</option>
-                  <option value="10000">$10,000</option>
-                  <option value="8000">$8,000</option>
-                  <option value="6000">$6,000</option>
-                  <option value="4000">$4,000</option>
-                  <option value="2000">$2,000</option>
-                </select>
-              </div>
-              <input
-                type="submit"
-                value="Find Bootcamps"
-                className="btn btn-primary btn-block"
-              />
-            </form>
+                <div className="form-group">
+                  <label> Budget</label>
+                  <select className="custom-select mb-2">
+                    <option value="any" selected>
+                      Any
+                    </option>
+                    <option value="20000">$20,000</option>
+                    <option value="15000">$15,000</option>
+                    <option value="10000">$10,000</option>
+                    <option value="8000">$8,000</option>
+                    <option value="6000">$6,000</option>
+                    <option value="4000">$4,000</option>
+                    <option value="2000">$2,000</option>
+                  </select>
+                </div>
+                <input
+                  type="submit"
+                  value="Find Bootcamps"
+                  className="btn btn-primary btn-block mb-3"
+                />
+              </form>
+            </div>
           </div>
 
           <div className="col-md-8">
@@ -92,7 +94,10 @@ const BootcampList = () => {
                   <div className="card-body">
                     <h5 className="card-title">
                       <Link to="/bootcamp-details">
-                        Devworks Bootcamp
+                        <h3>
+                          {" "}
+                          <strong>Devworks Bootcamp</strong>
+                        </h3>
                         <span className="float-right badge badge-success">
                           8.8
                         </span>
@@ -116,7 +121,10 @@ const BootcampList = () => {
                   <div className="card-body">
                     <h5 className="card-title">
                       <Link to="/bootcamp-details">
-                        ModernTech Bootcamp
+                        <h3>
+                          {" "}
+                          <strong>ModernTech Bootcamp</strong>
+                        </h3>
                         <span className="float-right badge badge-success">
                           7.5
                         </span>
@@ -139,7 +147,11 @@ const BootcampList = () => {
                   <div className="card-body">
                     <h5 className="card-title">
                       <Link to="/bootcamp-details">
-                        Codemasters
+                        <h3>
+                          {" "}
+                          <strong>Codemasters Bootcamp</strong>
+                        </h3>
+
                         <span className="float-right badge badge-success">
                           9.2
                         </span>
@@ -165,7 +177,11 @@ const BootcampList = () => {
                   <div className="card-body">
                     <h5 className="card-title">
                       <Link to="/bootcamp-details">
-                        DevCentral Bootcamp
+                        <h3>
+                          {" "}
+                          <strong>DevCentral Bootcamp</strong>
+                        </h3>
+
                         <span className="float-right badge badge-success">
                           6.4
                         </span>

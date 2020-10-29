@@ -11,7 +11,9 @@ const BootcampDetails = () => {
       </div>
       <div className="row">
         <div className="col-md-8">
-          <h1>DevWorks Bootcamp</h1>
+          <h2 className="my-2">
+            <strong>DevWorks Bootcamp Reviews</strong>
+          </h2>
           <p>
             Devworks is a full stack JavaScript Bootcamp located in the heart of
             Boston that focuses on the technologies you need to get a high
@@ -22,7 +24,7 @@ const BootcampDetails = () => {
           </p>
           <div className="card mb-3">
             <h5 className="card-header bg-primary text-white">
-              Front End Web Development
+              <strong> Front End Web Development</strong>
             </h5>
             <div className="card-body">
               <h5 className="card-title">Duration: 8 Weeks</h5>
@@ -45,7 +47,7 @@ const BootcampDetails = () => {
 
           <div className="card mb-3">
             <h5 className="card-header bg-primary text-white">
-              Full Stack Web Development
+              <strong>Full Stack Web Development</strong>
             </h5>
             <div className="card-body">
               <h5 className="card-title">Duration: 12 Weeks</h5>
@@ -69,12 +71,12 @@ const BootcampDetails = () => {
         </div>
         <div className="col-md-4">
           <img src="img/image_1.jpg" className="img-thumbnail" alt="" />
-          <h1 className="text-center my-4">
+          <h2 className="text-center my-4">
             <span className="badge badge-secondary badge-success rounded-circle p-2">
               8.8
             </span>{" "}
             Rating
-          </h1>
+          </h2>
           <Link to="/reviews" className="btn btn-dark btn-block my-3">
             <i className="fas fa-comments"></i> Read Reviews
           </Link>

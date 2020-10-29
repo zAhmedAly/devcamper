@@ -46,7 +46,7 @@ const PasswordUpdate = () => {
                 </div> */}
                 <div className="form-group">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-3">
                       <input
                         type="submit"
                         value="Change Password"

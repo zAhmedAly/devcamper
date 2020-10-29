@@ -21,11 +21,14 @@ const BootcampManage = () => {
                     <div className="card-body">
                       <h5 className="card-title">
                         <Link to="/bootcamp-details">
-                          Devworks Bootcamp
-                          <span className="float-right badge badge-success">
-                            8.8
-                          </span>
+                          <h3>
+                            {" "}
+                            <strong>Devworks Bootcamp</strong>
+                          </h3>
                         </Link>
+                        <span className="float-right badge badge-success">
+                          8.8
+                        </span>
                       </h5>
                       <span className="badge badge-dark mb-2">Boston, MA</span>
                       <p className="card-text">

@@ -1,7 +1,85 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { logout } from "../../actions/auth";
 
-const Navbar = () => {
+const Navbar = ({ auth: { isAuthenticated }, logout }) => {
+  const authLinks = (
+    <li className="nav-item dropdown">
+      <a
+        className="nav-link dropdown-toggle"
+        href="#!"
+        id="navbarDropdown"
+        role="button"
+        data-toggle="dropdown"
+      >
+        <i className="fas fa-user"></i> User Account
+      </a>
+      <div className="dropdown-menu">
+        <Link
+          className="dropdown-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          to="/manage-bootcamp"
+        >
+          Manage Bootcamp
+        </Link>
+        <Link
+          className="dropdown-item active"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          to="manage-reviews"
+        >
+          Manage Reviews
+        </Link>
+        <Link
+          className="dropdown-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          to="/manage-account"
+        >
+          Manage Account
+        </Link>
+        <div className="dropdown-divider"></div>
+        <Link
+          onClick={logout}
+          className="dropdown-item"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          to="/login"
+        >
+          <i className="fas fa-sign-out-alt"></i> Logout
+        </Link>
+      </div>
+    </li>
+  );
+
+  const guestLinks = (
+    <>
+      <li className="nav-item">
+        <Link
+          className="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          to="/login"
+        >
+          <i className="fas fa-sign-in-alt"></i> Login
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          className="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          to="/register"
+        >
+          <i className="fas fa-user-plus"></i> Register
+        </Link>
+      </li>
+    </>
+  );
+
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top py-0">
       <div className="container">
@@ -12,14 +90,15 @@ const Navbar = () => {
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent"
+          data-target="#!navbarSupportedContent"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
+            {!isAuthenticated && guestLinks}
+            {/* <li className="nav-item">
               <Link
                 className="nav-link"
                 data-toggle="collapse"
@@ -38,11 +117,12 @@ const Navbar = () => {
               >
                 <i className="fas fa-user-plus"></i> Register
               </Link>
-            </li>
-            <li className="nav-item dropdown">
+            </li> */}
+            {isAuthenticated && authLinks}
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="#"
+                href="#!"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -84,9 +164,9 @@ const Navbar = () => {
                   <i className="fas fa-sign-out-alt"></i> Logout
                 </Link>
               </div>
-            </li>
+            </li> */}
             <li className="nav-item d-none d-sm-block">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#!">
                 |
               </a>
             </li>
@@ -107,4 +187,13 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { logout })(Navbar);

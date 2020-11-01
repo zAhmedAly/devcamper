@@ -68,7 +68,7 @@ const BootcampManage = () => {
                 Manage Courses
               </Link>
 
-              <a href="#" className="btn btn-danger btn-block">
+              <a href="#!" className="btn btn-danger btn-block">
                 Remove Bootcamp
               </a>
               <p className="text-muted mt-5">

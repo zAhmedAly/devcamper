@@ -64,7 +64,8 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
           data-target=".navbar-collapse.show"
           to="/login"
         >
-          <i className="fas fa-sign-in-alt"></i> Login
+          <i className="fas fa-sign-in-alt"></i>
+          <strong> Login</strong>
         </Link>
       </li>
       <li className="nav-item">
@@ -74,7 +75,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
           data-target=".navbar-collapse.show"
           to="/register"
         >
-          <i className="fas fa-user-plus"></i> Register
+          <i className="fas fa-user-plus"></i> <strong> Register</strong>
         </Link>
       </li>
     </>
@@ -83,9 +84,11 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top py-0">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          <i className="fas fa-laptop-code"></i> DevCamper
-        </Link>
+        <h1>
+          <Link className="navbar-brand" to="/">
+            <i className="fas fa-laptop-code"></i> <strong> DevCamper</strong>
+          </Link>
+        </h1>
         <button
           className="navbar-toggler"
           type="button"

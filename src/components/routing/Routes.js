@@ -23,7 +23,7 @@ import PrivateRoute from "../routing/PrivateRoute";
 
 const Routes = (props) => {
   return (
-    <section className="container mb-5">
+    <section className="container">
       <Alert />
       <Switch>
         <Route exact path="/register" component={Register} />

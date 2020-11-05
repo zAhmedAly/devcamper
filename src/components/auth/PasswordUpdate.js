@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const PasswordUpdate = () => {
   return (
-    <section className="container mt-5">
+    <section className="py-5 mt-5">
       <div className="row">
         <div className="col-md-10 m-auto">
           <div className="card bg-white">
             <div className="card-body">
-              <h1 className="mb-2">Update Password</h1>
+              <h1 className="mb-4">Update Password</h1>
               <form>
                 <div className="form-group">
                   <label>Current Password</label>

@@ -3,33 +3,41 @@ import { Link } from "react-router-dom";
 
 const AccountManage = () => {
   return (
-    <section className="container mt-5">
+    <section className="py-5 mt-5">
       <div className="row">
         <div className="col-md-10 m-auto">
           <div className="card bg-white">
             <div className="card-body">
-              <h1 className="mb-2">Manage Account</h1>
+              <h1 className="mb-4">Manage Account</h1>
               <form>
-                <div className="form-group">
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    name="title"
-                    className="form-control"
-                    placeholder="Name"
-                    value="John Doe"
-                  />
+                <div className="row">
+                  <div className="col-md-6 mb-4">
+                    <div className="form-group">
+                      <label>Name</label>
+                      <input
+                        type="text"
+                        name="title"
+                        className="form-control"
+                        placeholder="Name"
+                        value="John Doe"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-md-6 mb-4">
+                    <div className="form-group">
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        className="form-control"
+                        placeholder="Email"
+                        value="jdoe@gmail.com"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    className="form-control"
-                    placeholder="Email"
-                    value="jdoe@gmail.com"
-                  />
-                </div>
+
                 <div className="form-group">
                   <div className="row">
                     <div className="col-md-6 mb-3">

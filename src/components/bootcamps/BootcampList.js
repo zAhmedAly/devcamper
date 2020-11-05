@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const BootcampList = () => {
   return (
-    <section className="mt-5">
+    <section className="py-5 mt-5">
       {/* <div className="container"> */}
-      <div className="row py-3">
+      <div className="row">
         <div className="col-md-4">
           <div className="card card-body mb-4">
             <h4 className="mb-3">By Location</h4>

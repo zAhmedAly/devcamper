@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BootcampDetails = () => {
   return (
-    <section className="container mt-5">
+    <section className="py-5 mt-5">
       <div className="col-md">
         <Link to="/bootcamps" className="btn btn-secondary my-2">
           <i className="fas fa-chevron-left"> </i> Bootcamp List

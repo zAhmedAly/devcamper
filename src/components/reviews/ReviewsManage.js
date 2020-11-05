@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ReviewsManage = () => {
   return (
-    <section className="container mt-5">
+    <section className="py-5 mt-5">
       <div className="row">
         <div className="col-md-10 m-auto">
           <div className="card bg-white">

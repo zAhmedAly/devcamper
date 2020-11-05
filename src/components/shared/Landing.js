@@ -4,7 +4,7 @@ const Landing = () => {
   return (
     <section className="showcase">
       <div className="dark-overlay">
-        <div className="showcase-inner container">
+        <div className="showcase-inner">
           <h1 className="display-4">Find a Code Bootcamp</h1>
           <p className="lead">
             Find, rate and read reviews on coding bootcamps

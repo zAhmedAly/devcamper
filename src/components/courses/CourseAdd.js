@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CourseAdd = () => {
   return (
-    <section className="container mt-5">
+    <section className="py-5 mt-5">
       <div className="row">
         <div className="col-md-10 m-auto">
           <div className="card bg-white">
@@ -87,7 +87,7 @@ const CourseAdd = () => {
                 </div> */}
                 <div className="form-group">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-3">
                       <input
                         type="submit"
                         value="Add Course"

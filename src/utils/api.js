@@ -1,12 +1,13 @@
-import axios from 'axios';
-import store from '../store';
-import { LOGOUT } from '../actions/types';
+import axios from "axios";
+import store from "../store";
+import { LOGOUT } from "../actions/types";
+import { setAlert } from "../actions/alert";
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: "/api",
   headers: {
-    'Content-Type': 'application/json'
-  }
+    "Content-Type": "application/json",
+  },
 });
 /**
  intercept any error responses from the api
@@ -17,10 +18,13 @@ const api = axios.create({
 **/
 
 api.interceptors.response.use(
-  res => res,
-  err => {
+  (res) => res,
+  (err) => {
     if (err.response.status === 401) {
       store.dispatch({ type: LOGOUT });
+    } else if (err.response.status === 500) {
+      console.log("API interceptors Error = ", err.response.statusText);
+      store.dispatch(setAlert(err.response.statusText, "danger"));
     }
     return Promise.reject(err);
   }

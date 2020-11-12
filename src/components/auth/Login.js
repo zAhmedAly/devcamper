@@ -3,8 +3,12 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
+import Spinner from '../shared/Spinner';
+import Spinner1 from '../shared/Spinner1';
 
 const Login = ({ login, isAuthenticated }) => {
+  const [loggedInState, setLoggedInState] = useState();
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -17,6 +21,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setLoggedInState('Logging In');
     login(email, password);
   };
 
@@ -26,6 +31,7 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <section className='form py-5 mt-5'>
       {/* <div className='container'> */}
+      {loggedInState === 'Logging In' ? <Spinner /> : ''}
       <div className='row'>
         <div className='col-md-6 m-auto'>
           <div className='card bg-white px-4'>

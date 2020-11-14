@@ -12,12 +12,19 @@ const PrivateRoute = ({
   <Route
     {...rest}
     render={(props) =>
+      // console.log ('PrivateRoute props.location ... ', props.location)
       loading ? (
         <Spinner />
       ) : isAuthenticated ? (
         <Component {...props} />
       ) : (
-        <Redirect to="/login" />
+        // <Redirect to="/login" />
+        <Redirect
+          to={{
+            pathname: "/login",
+            state: { from: props.location },
+          }}
+        />
       )
     }
   />

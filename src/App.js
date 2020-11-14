@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import Landing from "./components/shared/Landing";
 import Navbar from "./components/shared/Navbar";
 
@@ -7,12 +9,13 @@ import Routes from "./components/routing/Routes";
 import { LOGOUT } from "./actions/types";
 
 // Redux
-import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
+import Spinner from "./components/shared/Spinner";
 
-function App() {
+function App({ loading }) {
+  console.log("APP LOADING VALUE ... ", loading);
   useEffect(() => {
     // check for token in LS
     if (localStorage.token) {
@@ -27,7 +30,8 @@ function App() {
   }, []);
 
   return (
-    <Provider store={store}>
+    <Fragment>
+      {loading ? <Spinner /> : ""}
       <Router>
         <Fragment>
           <Navbar />
@@ -37,8 +41,16 @@ function App() {
           </Switch>
         </Fragment>
       </Router>
-    </Provider>
+    </Fragment>
   );
 }
 
-export default App;
+App.propTypes = {
+  loading: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  loading: state.auth.loading,
+});
+
+export default connect(mapStateToProps)(App);

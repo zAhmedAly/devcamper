@@ -8,6 +8,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  IN_PROGRESS,
 } from "./types";
 
 // Load User
@@ -53,13 +54,18 @@ export const register = (formData) => async (dispatch) => {
 export const login = (email, password) => async (dispatch) => {
   const body = { email, password };
 
+  dispatch({ type: IN_PROGRESS });
+
   try {
     const res = await api.post("/auth", body);
 
-    dispatch({
-      type: LOGIN_SUCCESS,
-      payload: res.data,
-    });
+    setTimeout(
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data,
+      }),
+      20000
+    );
 
     dispatch(loadUser());
   } catch (err) {
@@ -68,10 +74,12 @@ export const login = (email, password) => async (dispatch) => {
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
-
-    dispatch({
-      type: LOGIN_FAIL,
-    });
+    setTimeout(
+      dispatch({
+        type: LOGIN_FAIL,
+      }),
+      15000
+    );
   }
 };
 

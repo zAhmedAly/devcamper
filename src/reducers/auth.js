@@ -4,9 +4,10 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
-  //LOGIN_FAIL,
+  LOGIN_FAIL,
   LOGOUT,
   ACCOUNT_DELETED,
+  IN_PROGRESS,
 } from "../actions/types";
 
 const initialState = {
@@ -20,6 +21,11 @@ const auth = function (state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
+    case IN_PROGRESS:
+      return {
+        ...state,
+        loading: true,
+      };
     case USER_LOADED:
       return {
         ...state,
@@ -49,6 +55,7 @@ const auth = function (state = initialState, action) {
         loading: false,
         user: null,
       };
+    case LOGIN_FAIL:
     case AUTH_ERROR:
     case LOGOUT:
       return {

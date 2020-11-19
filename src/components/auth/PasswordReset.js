@@ -8,7 +8,9 @@ const PasswordReset = () => {
         <div className="col-md-10 m-auto">
           <div className="card bg-white">
             <div className="card-body">
-              <h1 className="mb-2">Reset Password</h1>
+              <h2 className="mb-2">
+                <strong>Reset Password</strong>
+              </h2>
               <p>
                 Use this form to reset your password using the registered email
                 address.

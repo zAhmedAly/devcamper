@@ -6,57 +6,74 @@ import { logout } from "../../actions/auth";
 
 const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinks = (
-    <li className="nav-item dropdown">
-      <a
-        className="nav-link dropdown-toggle"
-        href="#!"
-        id="navbarDropdown"
-        role="button"
-        data-toggle="dropdown"
-      >
-        <i className="fas fa-user"></i> User Account
-      </a>
-      <div className="dropdown-menu">
+    <ul className="navbar-nav ml-auto">
+      <li className="nav-item dropdown">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#!"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+        >
+          <i className="fas fa-user"></i> User Account
+        </a>
+        <div className="dropdown-menu">
+          <Link
+            className="dropdown-item"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+            to="/manage-bootcamp"
+          >
+            Manage Bootcamp
+          </Link>
+          <Link
+            className="dropdown-item active"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+            to="/manage-reviews"
+          >
+            Manage Reviews
+          </Link>
+          <Link
+            className="dropdown-item"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+            to="/manage-account"
+          >
+            Manage Account
+          </Link>
+          <div className="dropdown-divider"></div>
+          <Link
+            onClick={logout}
+            className="dropdown-item"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+            to="/login"
+          >
+            <i className="fas fa-sign-out-alt"></i> Logout
+          </Link>
+        </div>
+      </li>
+      <li className="nav-item py-0 d-none d-sm-block">
+        <a className="nav-link" href="#!">
+          |
+        </a>
+      </li>
+      <li className="nav-item">
         <Link
-          className="dropdown-item"
+          className="nav-link"
           data-toggle="collapse"
           data-target=".navbar-collapse.show"
-          to="/manage-bootcamp"
+          to="/bootcamps"
         >
-          Manage Bootcamp
+          <strong> Bootcamps</strong>
         </Link>
-        <Link
-          className="dropdown-item active"
-          data-toggle="collapse"
-          data-target=".navbar-collapse.show"
-          to="manage-reviews"
-        >
-          Manage Reviews
-        </Link>
-        <Link
-          className="dropdown-item"
-          data-toggle="collapse"
-          data-target=".navbar-collapse.show"
-          to="/manage-account"
-        >
-          Manage Account
-        </Link>
-        <div className="dropdown-divider"></div>
-        <Link
-          onClick={logout}
-          className="dropdown-item"
-          data-toggle="collapse"
-          data-target=".navbar-collapse.show"
-          to="/login"
-        >
-          <i className="fas fa-sign-out-alt"></i> Logout
-        </Link>
-      </div>
-    </li>
+      </li>
+    </ul>
   );
 
   const guestLinks = (
-    <>
+    <ul className="navbar-nav ml-auto">
       <li className="nav-item">
         <Link
           className="nav-link"
@@ -78,12 +95,26 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
           <i className="fas fa-user-plus"></i> <strong> Register</strong>
         </Link>
       </li>
-    </>
+      <li className="nav-item py-0 d-none d-sm-block">
+        <a className="nav-link" href="#!">
+          |
+        </a>
+      </li>
+      <li className="nav-item">
+        <Link
+          className="nav-link"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
+          to="/bootcamps"
+        >
+          <strong> Bootcamps</strong>
+        </Link>
+      </li>
+    </ul>
   );
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top py-0">
-      {/* <div className='container'> */}
       <h1>
         <Link className="navbar-brand" to="/">
           <i className="fas fa-laptop-code"></i> <strong> DevCamper</strong>
@@ -99,93 +130,9 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
       </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ml-auto">
-          {!isAuthenticated && guestLinks}
-          {/* <li className="nav-item">
-              <Link
-                className="nav-link"
-                data-toggle="collapse"
-                data-target=".navbar-collapse.show"
-                to="/login"
-              >
-                <i className="fas fa-sign-in-alt"></i> Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                data-toggle="collapse"
-                data-target=".navbar-collapse.show"
-                to="/register"
-              >
-                <i className="fas fa-user-plus"></i> Register
-              </Link>
-            </li> */}
-          {isAuthenticated && authLinks}
-          {/* <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#!"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-              >
-                <i className="fas fa-user"></i> User Account
-              </a>
-              <div className="dropdown-menu">
-                <Link
-                  className="dropdown-item"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                  to="/manage-bootcamp"
-                >
-                  Manage Bootcamp
-                </Link>
-                <Link
-                  className="dropdown-item active"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                  to="manage-reviews"
-                >
-                  Manage Reviews
-                </Link>
-                <Link
-                  className="dropdown-item"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                  to="/manage-account"
-                >
-                  Manage Account
-                </Link>
-                <div className="dropdown-divider"></div>
-                <Link
-                  className="dropdown-item"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                  to="/login"
-                >
-                  <i className="fas fa-sign-out-alt"></i> Logout
-                </Link>
-              </div>
-            </li> */}
-          <li className="nav-item d-none d-sm-block">
-            <a className="nav-link" href="#!">
-              |
-            </a>
-          </li>
-          <li className="nav-item">
-            <Link
-              className="nav-link"
-              data-toggle="collapse"
-              data-target=".navbar-collapse.show"
-              to="/bootcamps"
-            >
-              Browse Bootcamps
-            </Link>
-          </li>
-        </ul>
+        <Fragment>{!isAuthenticated && guestLinks}</Fragment>
+        <Fragment>{isAuthenticated && authLinks}</Fragment>
       </div>
-      {/* </div> */}
     </nav>
   );
 };

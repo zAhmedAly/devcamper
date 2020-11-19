@@ -8,7 +8,9 @@ const PasswordUpdate = () => {
         <div className="col-md-10 m-auto">
           <div className="card bg-white">
             <div className="card-body">
-              <h1 className="mb-4">Update Password</h1>
+              <h2 className="mb-4">
+                <strong>Update Password</strong>
+              </h2>
               <form>
                 <div className="form-group">
                   <label>Current Password</label>

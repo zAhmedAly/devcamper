@@ -57,15 +57,17 @@ export const login = (email, password) => async (dispatch) => {
   dispatch({ type: IN_PROGRESS });
 
   try {
-    const res = await api.post("/auth", body);
+    const newLocal = await api.post("/auth", body);
+    const res = newLocal;
 
-    setTimeout(
-      dispatch({
-        type: LOGIN_SUCCESS,
-        payload: res.data,
-      }),
-      20000
-    );
+    // setTimeout(
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data,
+    });
+    //   ,
+    //   25000
+    // );
 
     dispatch(loadUser());
   } catch (err) {

@@ -27,7 +27,8 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("BEFORE LOGIN");
-    loginAction();
+    login(email, password);
+    console.log("AFTER LOGIN");
   };
   // console.log("LOCATION STATE ... ", location.state);
   const { from } = location.state || { from: "/manage-account" };
@@ -37,7 +38,6 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
   }
   return (
     <Fragment>
-      {/* {loading && <Spinner />} */}
       {loading && <Spinner />}
 
       <section className="form py-5 mt-5">
@@ -45,9 +45,9 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
           <div className="col-md-6 m-auto">
             <div className="card bg-white px-4">
               <div className="card-body">
-                <h1>
-                  <i className="fas fa-sign-in-alt"></i> Login
-                </h1>
+                <h2>
+                  <i className="fas fa-sign-in-alt"></i> <strong>Login</strong>
+                </h2>
                 <p>
                   Log in to list your bootcamp or rate, review and favorite
                   bootcamps
@@ -78,26 +78,29 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
                       // minLength="6"
                     />
                   </div>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <input
                       type="submit"
                       value="Login"
                       className="btn btn-primary btn-block"
                     />
-                  </div>
+                  </div> */}
                   <div className="form-group">
                     {loading ? (
-                      <button
-                        className="btn btn-success btn-lg btn-block"
-                        disabled={loading}
-                      >
-                        <i
-                          class="fas fa-spinner fa-spin"
-                          aria-hidden="true"
-                        ></i>{" "}
-                        Logging ...
-                      </button>
+                      <Spinner />
                     ) : (
+                      // (
+                      //   <button
+                      //     className="btn btn-success btn-lg btn-block"
+                      //     disabled={loading}
+                      //   >
+                      //     <i
+                      //       className="fas fa-spinner fa-spin"
+                      //       aria-hidden="true"
+                      //     ></i>{" "}
+                      //     Logging ...
+                      //   </button>
+                      // )
                       <button
                         className="btn btn-success btn-lg btn-block"
                         disabled={loading}

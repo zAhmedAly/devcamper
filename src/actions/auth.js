@@ -60,28 +60,28 @@ export const login = (email, password) => async (dispatch) => {
     const newLocal = await api.post("/auth", body);
     const res = newLocal;
 
-    // setTimeout(
-    dispatch({
-      type: LOGIN_SUCCESS,
-      payload: res.data,
-    });
-    //   ,
-    //   25000
-    // );
+    setTimeout(() => {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data,
+      });
+    }, 2000);
 
-    dispatch(loadUser());
+    setTimeout(() => {
+      dispatch(loadUser());
+    }, 2000);
   } catch (err) {
     const errors = err.response.data.errors;
 
     if (errors) {
-      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
-    setTimeout(
+    setTimeout(() => {
+      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+
       dispatch({
         type: LOGIN_FAIL,
-      }),
-      15000
-    );
+      });
+    }, 2000);
   }
 };
 

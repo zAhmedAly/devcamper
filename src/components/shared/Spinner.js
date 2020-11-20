@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import spinner from "./spinner.gif";
 import loader from "./loader.gif";
+import spinner1 from "./Spinner-1s-200px.gif";
 
 const Spinner = () => {
   return (
@@ -12,7 +13,7 @@ const Spinner = () => {
       /> */}
       <div className="loader-container">
         <div className="loader">
-          <img className="loader-img" src={spinner} alt="Loading ..." />
+          <img className="loader-img" src={spinner1} alt="Loading ..." />
         </div>
       </div>
     </Fragment>

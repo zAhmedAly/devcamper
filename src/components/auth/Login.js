@@ -19,10 +19,10 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const loginAction = () => {
-    login(email, password);
-    console.log("AFTER LOGIN");
-  };
+  // const loginAction = () => {
+  //   login(email, password);
+  //   console.log("AFTER LOGIN");
+  // };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -42,20 +42,20 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
 
       <section className="form py-5 mt-5">
         <div className="row">
-          <div className="col-md-6 m-auto">
+          <div className="col-md-5 m-auto">
             <div className="card bg-white px-4">
               <div className="card-body">
-                <h2>
+                <h2 className="mb-3">
                   <i className="fas fa-sign-in-alt"></i> <strong>Login</strong>
                 </h2>
-                <p>
+                {/* <p>
                   Log in to list your bootcamp or rate, review and favorite
                   bootcamps
-                </p>
+                </p> */}
                 {/* <form className="form" onSubmit={onSubmit}> */}
                 <form className="form">
                   <div className="form-group">
-                    <label htmlFor="email">Email Address</label>
+                    {/* <label htmlFor="email">Email Address</label> */}
                     <input
                       type="email"
                       name="email"
@@ -66,8 +66,8 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
                       // required
                     />
                   </div>
-                  <div className="form-group mb-4">
-                    <label htmlFor="password">Password</label>
+                  <div className="form-group mb-1">
+                    {/* <label htmlFor="password">Password</label> */}
                     <input
                       type="password"
                       name="password"
@@ -78,6 +78,13 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
                       // minLength="6"
                     />
                   </div>
+                  <div style={{ textAlign: "right" }}>
+                    <p>
+                      {/* Forgot Password?{" "} */}
+                      <Link to="/reset-password">Reset Password</Link>
+                    </p>
+                  </div>
+
                   {/* <div className="form-group">
                     <input
                       type="submit"
@@ -102,7 +109,7 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
                       //   </button>
                       // )
                       <button
-                        className="btn btn-success btn-lg btn-block"
+                        className="btn btn-primary btn-lg btn-block"
                         disabled={loading}
                         onClick={onSubmit}
                       >
@@ -121,10 +128,14 @@ const Login = ({ login, isAuthenticated, loading, location }) => {
                     </button> */}
                   </div>
                 </form>
-                <p>
+                {/* <p>
                   {" "}
                   Forgot Password?{" "}
                   <Link to="/reset-password">Reset Password</Link>
+                </p> */}
+                <p>
+                  {" "}
+                  Don't have an account? <Link to="/register">Register</Link>
                 </p>
               </div>
             </div>

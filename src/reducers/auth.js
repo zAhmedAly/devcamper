@@ -45,7 +45,7 @@ const auth = function (state = initialState, action) {
         ...state,
         ...payload,
         isAuthenticated: true,
-        loading: false,
+        // loading: false,
       };
     case ACCOUNT_DELETED:
       return {

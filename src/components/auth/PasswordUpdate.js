@@ -21,23 +21,29 @@ const PasswordUpdate = () => {
                     placeholder="Current Password"
                   />
                 </div>
-                <div className="form-group">
-                  <label>New Password</label>
-                  <input
-                    type="password"
-                    name="newPassword"
-                    className="form-control"
-                    placeholder="New Password"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Confirm New Password</label>
-                  <input
-                    type="password"
-                    name="newPassword2"
-                    className="form-control"
-                    placeholder="Confirm New Password"
-                  />
+                <div className="row">
+                  <div className="col-md-6 mb-2">
+                    <div className="form-group">
+                      <label>New Password</label>
+                      <input
+                        type="password"
+                        name="newPassword"
+                        className="form-control"
+                        placeholder="New Password"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-2">
+                    <div className="form-group">
+                      <label>Confirm New Password</label>
+                      <input
+                        type="password"
+                        name="newPassword2"
+                        className="form-control"
+                        placeholder="Confirm New Password"
+                      />
+                    </div>
+                  </div>
                 </div>
                 {/* <div className="form-group">
                   <input

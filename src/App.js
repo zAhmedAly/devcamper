@@ -13,6 +13,7 @@ import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import Spinner from "./components/shared/Spinner";
+import Footer from "./components/shared/Footer";
 
 function App({ loading }) {
   console.log("APP LOADING VALUE ... ", loading);
@@ -41,6 +42,7 @@ function App({ loading }) {
           </Switch>
         </Fragment>
       </Router>
+      <Footer />
     </Fragment>
   );
 }

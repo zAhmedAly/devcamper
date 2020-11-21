@@ -8,10 +8,12 @@ const CoursesManage = () => {
         <div className="col-md-10 m-auto">
           <div className="card bg-white">
             <div className="card-body">
-              <Link to="/manage-bootcamp" className="btn btn-secondary my-2">
+              <Link to="/manage-bootcamp" className="btn btn-secondary mt-2">
                 <i className="fas fa-chevron-left"></i> Manage Bootcamp
               </Link>
-              <h1 className="mb-4">Manage Courses</h1>
+              <h2 className="my-3">
+                <strong>Manage Courses</strong>
+              </h2>
               <div className="card mb-3">
                 <div className="row no-gutters">
                   <div className="col-md-4">
@@ -36,9 +38,6 @@ const CoursesManage = () => {
                 </div>
               </div>
 
-              <Link to="/add-course" className="btn btn-primary btn-block mb-4">
-                Add Bootcamp Course
-              </Link>
               <table className="table table-striped">
                 <thead>
                   <tr>
@@ -71,6 +70,9 @@ const CoursesManage = () => {
                   </tr>
                 </tbody>
               </table>
+              <Link to="/add-course" className="btn btn-primary btn-block my-2">
+                Add Bootcamp Course
+              </Link>
             </div>
           </div>
         </div>

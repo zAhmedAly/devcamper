@@ -71,13 +71,15 @@ export const login = (email, password) => async (dispatch) => {
       dispatch(loadUser());
     }, 2000);
   } catch (err) {
+    // if (err.response.status != 500) {
+    console.log("Actions Auth err = ", err.response.data.errors);
     const errors = err.response.data.errors;
-
+    console.log("Actions Auth errors = ", errors);
     if (errors) {
-    }
-    setTimeout(() => {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
-
+    }
+    // }
+    setTimeout(() => {
       dispatch({
         type: LOGIN_FAIL,
       });

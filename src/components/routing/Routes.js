@@ -20,6 +20,7 @@ import ReviewsManage from "../reviews/ReviewsManage";
 import Alert from "../shared/Alert";
 import NotFound from "../shared/NotFound";
 import PrivateRoute from "../routing/PrivateRoute";
+import Footer from "../shared/Footer";
 
 const Routes = (props) => {
   return (
@@ -31,7 +32,6 @@ const Routes = (props) => {
           </div>
         </div>
       </div>
-
       <main className="py-3">
         <div className="container">
           {/* <div className="row mt-5">

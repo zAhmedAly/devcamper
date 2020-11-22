@@ -1,16 +1,23 @@
 import React from "react";
+import Alert from "./Alert";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="container">
-        <div className="row">
-          <div className="col-md text-center py-3">
-            Copyright &copy; DevCamper 2020
-          </div>
-        </div>
-      </div>
-    </footer>
+    <nav className="navbar fixed-bottom navbar-light bg-light">
+      <span className="navbar-text text-center">
+        Copyright &copy; DevCamper 2020
+      </span>
+    </nav>
+
+    // <footer>
+    //   <div className="container">
+    //     <div className="row">
+    //       <div className="col-md text-center py-3">
+    //         Copyright &copy; DevCamper 2020
+    //       </div>
+    //     </div>
+    //   </div>
+    // </footer>
   );
 };
 

@@ -11,9 +11,9 @@ const CoursesManage = () => {
               <Link to="/manage-bootcamp" className="btn btn-secondary mt-2">
                 <i className="fas fa-chevron-left"></i> Manage Bootcamp
               </Link>
-              <h2 className="my-3">
+              <h3 className="my-3">
                 <strong>Manage Courses</strong>
-              </h2>
+              </h3>
               <div className="card mb-3">
                 <div className="row no-gutters">
                   <div className="col-md-4">

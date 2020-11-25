@@ -11,7 +11,7 @@ const BootcampManage = () => {
               <Link to="/bootcamp-details" className="btn btn-secondary mt-2">
                 <i className="fas fa-chevron-left"></i> Bootcamp Details
               </Link>
-              <h2 className="my-3">Manage Bootcamp</h2>
+              <h3 className="my-3">Manage Bootcamp</h3>
               <div className="card mb-3">
                 <div className="row no-gutters">
                   <div className="col-md-4">
@@ -25,12 +25,22 @@ const BootcampManage = () => {
                             {" "}
                             <strong>Devworks Bootcamp</strong>
                           </h3>
+                          {/* <span className="float-right badge badge-success">
+                            8.8
+                          </span> */}
                         </Link>
-                        <span className="float-right badge badge-success">
-                          8.8
-                        </span>
                       </h5>
-                      <span className="badge badge-dark mb-2">Boston, MA</span>
+                      <div className="row">
+                        <div className="col-sm-6">
+                          <span className="badge badge-dark mb-2">
+                            Boston, MA
+                          </span>
+                        </div>
+                        <div className="col-sm-6">
+                          <span className=" badge badge-success">8.8</span>
+                        </div>
+                      </div>
+
                       <p className="card-text">
                         Web Development, UI/UX, Mobile Development
                       </p>

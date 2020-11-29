@@ -6,7 +6,7 @@ import { logout } from "../../actions/auth";
 
 const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinks = (
-    <ul className="navbar-nav">
+    <ul className="navbar-nav ml-auto">
       <li className="nav-item dropdown">
         <a
           className="nav-link dropdown-toggle"
@@ -73,7 +73,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   );
 
   const guestLinks = (
-    <ul>
+    <ul className="navbar-nav ml-auto">
       <li className="nav-item">
         <Link
           className="nav-link"
@@ -104,8 +104,8 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
       <li className="nav-item">
         <Link
           className="nav-link"
-          // data-toggle="collapse"
-          // data-target=".navbar-collapse.show"
+          data-toggle="collapse"
+          data-target=".navbar-collapse.show"
           to="/bootcamps"
         >
           <strong> Bootcamps</strong>

@@ -20,25 +20,14 @@ import ReviewsManage from "../reviews/ReviewsManage";
 import Alert from "../shared/Alert";
 import NotFound from "../shared/NotFound";
 import PrivateRoute from "../routing/PrivateRoute";
-import Footer from "../shared/Footer";
 
 const Routes = (props) => {
+  console.log("ROUTES PROPS = ", props);
   return (
     <Fragment>
-      <div className="container">
-        <div className="row mt-5">
-          <div className="col-md-6 m-auto">
-            <Alert />
-          </div>
-        </div>
-      </div>
-      <main className="py-3">
+      <main className="py-0">
         <div className="container">
-          {/* <div className="row mt-5">
-            <div className="col-md-6 m-auto">
-              <Alert />
-            </div>
-          </div> */}
+          <Alert />
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

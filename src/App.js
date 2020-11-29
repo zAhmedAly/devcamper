@@ -14,6 +14,7 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import Spinner from "./components/shared/Spinner";
 import Footer from "./components/shared/Footer";
+import Navbar1 from "./components/shared/Navbar1";
 
 function App({ loading }) {
   console.log("APP LOADING VALUE ... ", loading);
@@ -35,7 +36,7 @@ function App({ loading }) {
       {loading ? <Spinner /> : ""}
       <Router>
         <Fragment>
-          <Navbar />
+          <Navbar1 />
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />

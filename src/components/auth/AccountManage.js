@@ -8,12 +8,12 @@ const AccountManage = () => {
         <div className="col-md-10 m-auto">
           <div className="card bg-white">
             <div className="card-body">
-              <h2 className="mb-4">
+              <h2 className="mb-3">
                 <strong>Manage Account</strong>
               </h2>
               <form>
                 <div className="row">
-                  <div className="col-md-6 mb-4">
+                  <div className="col-md-6 mb-2">
                     <div className="form-group">
                       <label>Name</label>
                       <input
@@ -26,7 +26,7 @@ const AccountManage = () => {
                     </div>
                   </div>
 
-                  <div className="col-md-6 mb-4">
+                  <div className="col-md-6 mb-2">
                     <div className="form-group">
                       <label>Email</label>
                       <input

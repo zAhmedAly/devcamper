@@ -65,7 +65,7 @@ const BootcampManage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6 mb-2">
+                  <div className="col-md-6">
                     <input
                       type="submit"
                       className="btn btn-success"
